@@ -1,7 +1,9 @@
 import { MainContainer, Sidebar } from "@chatscope/chat-ui-kit-react";
+
+import Navbar from "../../Shared/Components/Navbar";
+
 import Chat from "./Chat/Chat";
 import Conversations from "./Conversations/Conversations";
-import Navbar from "../../Shared/Components/Navbar";
 
 const Dashboard = () => {
   return (
