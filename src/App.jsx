@@ -1,12 +1,11 @@
-import Dashboard from "./Pages/Dashboard";
-import Login from "./Pages/Login";
+import { BrowserRouter } from "react-router-dom";
+import PageRoutes from "./Shared/Routes/PageRoutes";
 
 function App() {
   return (
-    <>
-      <Login />
-      <Dashboard />
-    </>
+    <BrowserRouter>
+      <PageRoutes />
+    </BrowserRouter>
   );
 }
 
