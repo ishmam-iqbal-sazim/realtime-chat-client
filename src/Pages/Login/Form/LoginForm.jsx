@@ -1,14 +1,29 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
+import { loginSuccess } from "../../../Actions/auth";
+
+import { createNewUser } from "../Api/Methods";
 
 const LoginForm = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [user, setUser] = useState({
     username: "",
     password: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(user);
+    const response = await createNewUser(user);
+
+    if (response) {
+      dispatch(loginSuccess(response.data));
+      alert("Logged in Successfully");
+      navigate(`/${response.data.id}`);
+    }
   };
 
   return (

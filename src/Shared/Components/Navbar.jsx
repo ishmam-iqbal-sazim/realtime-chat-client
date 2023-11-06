@@ -1,14 +1,25 @@
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+
+import { logout } from "../../Actions/auth";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/");
+  };
+
   return (
     <nav className="flex justify-center gap-5 p-2 absolute z-50 right-2">
       <Link to={"/1"} className="btn btn-sm btn-secondary btn-outline">
         Dashboard
       </Link>
-      <Link to={"/"} className="btn btn-sm btn-accent">
+      <button onClick={() => handleLogout()} className="btn btn-sm btn-accent">
         Logout
-      </Link>
+      </button>
     </nav>
   );
 };
