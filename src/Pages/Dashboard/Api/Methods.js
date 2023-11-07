@@ -1,5 +1,5 @@
 import { getRequest } from "../../../Config/Axios/AxiosConfig";
 
-export const getUsers = async () => {
+export const fetchAllUsers = async () => {
   return await getRequest("users");
 };
