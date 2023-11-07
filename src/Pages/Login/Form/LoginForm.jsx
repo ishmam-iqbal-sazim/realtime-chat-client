@@ -17,12 +17,17 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const response = await createNewUser(user);
 
-    if (response) {
-      dispatch(loginSuccess(response.data));
+    const newUser = response.data;
+
+    if (newUser) {
+      dispatch(loginSuccess(newUser));
+
       alert("Logged in Successfully");
-      navigate(`/${response.data.id}`);
+
+      navigate(`/${newUser.id}`);
     }
   };
 
@@ -37,6 +42,7 @@ const LoginForm = () => {
         <label className="label">
           <span className="label-text">Username</span>
         </label>
+
         <input
           type="text"
           placeholder="Your username"
@@ -44,10 +50,12 @@ const LoginForm = () => {
           onChange={(e) => setUser({ ...user, username: e.target.value })}
         />
       </div>
+
       <div className="form-control w-full max-w-xs">
         <label className="label">
           <span className="label-text">Password</span>
         </label>
+
         <input
           type="password"
           placeholder="Your password"
@@ -55,6 +63,7 @@ const LoginForm = () => {
           onChange={(e) => setUser({ ...user, password: e.target.value })}
         />
       </div>
+
       <button
         className="btn btn-md btn-secondary font-semibold mt-5"
         type="submit"

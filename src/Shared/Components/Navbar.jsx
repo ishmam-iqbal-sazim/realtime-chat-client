@@ -2,12 +2,14 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
 import { logout } from "../../Actions/auth";
+import { clearChatUser } from "../../Actions/chat";
 
 const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleLogout = () => {
+    dispatch(clearChatUser());
     dispatch(logout());
     navigate("/");
   };
