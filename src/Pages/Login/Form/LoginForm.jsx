@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { loginSuccess } from "../../../Actions/auth";
+import { loginSuccess } from "../../../Stores/Actions/auth";
 
 import { createNewUser } from "../Api/Methods";
 

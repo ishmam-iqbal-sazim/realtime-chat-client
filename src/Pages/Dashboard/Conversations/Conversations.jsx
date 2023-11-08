@@ -1,13 +1,37 @@
-import { Conversation, ConversationList } from "@chatscope/chat-ui-kit-react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { changeChatUser } from "../../../Actions/chat";
+import { Conversation, ConversationList } from "@chatscope/chat-ui-kit-react";
 
-const Conversations = ({ users }) => {
+import { changeChatUser, setMessages } from "../../../Stores/Actions/chat";
+
+import { fetchUserMessageHistory } from "../Api/Methods";
+
+import { convertApiMessagesToChatMessages } from "../DashboardHelpers";
+
+const Conversations = ({ currentUser, users }) => {
   const dispatch = useDispatch();
 
-  const handleClick = (user) => {
+  const [activeChat, setActiveChat] = useState(null);
+
+  const handleClick = async (user) => {
+    await getMessageHistory(user);
+    setActiveChat(user.id);
     dispatch(changeChatUser(user));
+  };
+
+  const getMessageHistory = async (user) => {
+    const response = await fetchUserMessageHistory(currentUser.id, user.id);
+
+    const apiMessages = response.data;
+
+    const chatMessages = convertApiMessagesToChatMessages(
+      apiMessages,
+      currentUser,
+      user
+    );
+
+    dispatch(setMessages([...chatMessages]));
   };
 
   return (
@@ -19,6 +43,7 @@ const Conversations = ({ users }) => {
               name={user.username}
               key={user.id}
               onClick={() => handleClick(user)}
+              className={`${activeChat === user.id ? "bg-slate-200" : ""} my-2`}
             />
           ))}
         </ConversationList>

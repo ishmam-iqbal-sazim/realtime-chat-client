@@ -6,3 +6,8 @@ export const changeChatUser = (user) => ({
 export const clearChatUser = () => ({
   type: "CLEAR_CHAT_USER",
 });
+
+export const setMessages = (messages) => ({
+  type: "SET_MESSAGES",
+  payload: messages,
+});

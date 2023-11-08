@@ -1,6 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import ActionCable from "actioncable";
+
 import { MainContainer, Sidebar } from "@chatscope/chat-ui-kit-react";
 
 import Navbar from "../../Shared/Components/Navbar";
@@ -13,8 +15,10 @@ import { fetchAllUsers } from "./Api/Methods";
 const Dashboard = () => {
   const [users, setUsers] = useState([]);
 
+  const cable = ActionCable.createConsumer("ws://localhost:3000/cable");
+
   const currentUser = useSelector((state) => state.auth.user);
-  const chattingWith = useSelector((state) => state.chat.user);
+  const chattingWith = useSelector((state) => state.chat.chatUser);
 
   const getAllUsers = async () => {
     const response = await fetchAllUsers();
@@ -38,11 +42,15 @@ const Dashboard = () => {
             <p className="uppercase">{currentUser.username}</p>
           </div>
 
-          <Conversations users={users} />
+          <Conversations users={users} currentUser={currentUser} />
         </Sidebar>
 
         {chattingWith ? (
-          <Chat chattingWith={chattingWith} currentUser={currentUser} />
+          <Chat
+            chattingWith={chattingWith}
+            currentUser={currentUser}
+            cable={cable}
+          />
         ) : (
           <div className="w-full items-center flex justify-center">
             <div>Select someone to chat with</div>

@@ -1,18 +1,24 @@
 const initialState = {
-  user: null,
+  messages: [],
+  chatUser: null,
 };
 
 const chatReducer = (state = initialState, action) => {
   switch (action.type) {
+    case "SET_MESSAGES":
+      return {
+        ...state,
+        messages: [...action.payload],
+      };
     case "CHANGE_CHAT_USER":
       return {
         ...state,
-        user: action.payload,
+        chatUser: action.payload,
       };
     case "CLEAR_CHAT_USER":
       return {
         ...state,
-        user: null,
+        chatUser: null,
       };
     default:
       return state;
