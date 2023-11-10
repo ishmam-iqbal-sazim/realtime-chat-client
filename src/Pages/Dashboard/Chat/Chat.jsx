@@ -28,16 +28,6 @@ const Chat = ({ chattingWith, currentUser, cable }) => {
       sender_id: currentUser.id,
       receiver_id: chattingWith.id,
     });
-
-    const chatMessage = convertApiMessageToChatMessage(
-      response.data,
-      currentUser,
-      chattingWith
-    );
-
-    if (messages.length === 0) {
-      dispatch(setMessages([chatMessage]));
-    }
   };
 
   useEffect(() => {
@@ -67,7 +57,7 @@ const Chat = ({ chattingWith, currentUser, cable }) => {
   }, [chattingWith]);
 
   useEffect(() => {
-    if (messages.length !== 0) {
+    if (newMessage.id) {
       dispatch(setMessages([...messages, newMessage]));
     }
   }, [newMessage]);
