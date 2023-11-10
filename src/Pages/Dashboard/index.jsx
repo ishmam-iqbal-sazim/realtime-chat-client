@@ -33,13 +33,34 @@ const Dashboard = () => {
     getAllUsers();
   }, []);
 
+  const userColor = () => {
+    if (currentUser.username === "ishmam") {
+      return "bg-blue-400";
+    }
+    if (currentUser.username === "ragib") {
+      return "bg-indigo-400";
+    }
+    if (currentUser.username === "ashiq") {
+      return "bg-red-400";
+    }
+    if (currentUser.username === "ashik") {
+      return "bg-cyan-600";
+    }
+
+    return "bg-slate-200";
+  };
+
   return (
     <main className="relative pr-[1px] h-full">
       <Navbar />
       <MainContainer className="h-screen min-h-[700px]">
         <Sidebar position="left" scrollable={false}>
-          <div className="flex justify-center items-center bg-slate-200 h-20">
-            <p className="uppercase">{currentUser.username}</p>
+          <div
+            className={`flex justify-center items-center ${userColor()} h-20`}
+          >
+            <p className="uppercase font-normal tracking-wide">
+              {currentUser.username}
+            </p>
           </div>
 
           <Conversations users={users} currentUser={currentUser} />
