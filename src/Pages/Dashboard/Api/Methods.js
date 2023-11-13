@@ -6,7 +6,7 @@ export const fetchAllUsers = async () => {
 
 export const fetchUserMessageHistory = async (senderId, receiverId) => {
   return await getRequest(
-    `messages?sender_id=${senderId}&receiver_id=${receiverId}`
+    `messages?current_user=${senderId}&chatting_with=${receiverId}`
   );
 };
 

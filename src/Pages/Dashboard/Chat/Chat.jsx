@@ -22,8 +22,6 @@ const Chat = ({ chattingWith, currentUser, cable }) => {
 
   const [newMessage, setNewMessage] = useState({});
 
-  console.log(messages);
-
   const handleSend = async (message) => {
     const response = await sendMessage({
       content: message,
