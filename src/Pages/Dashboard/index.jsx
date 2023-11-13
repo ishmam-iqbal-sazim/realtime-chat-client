@@ -33,6 +33,25 @@ const Dashboard = () => {
     getAllUsers();
   }, []);
 
+  useEffect(() => {
+    const subscription = cable.subscriptions.create(
+      {
+        channel: "AppearanceChannel",
+      },
+      {
+        received: (data) => {
+          setUsers((prevUsers) => {
+            return [...prevUsers, data];
+          });
+        },
+      }
+    );
+
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, []);
+
   return (
     <main className="relative pr-[1px] h-full">
       <Navbar />
