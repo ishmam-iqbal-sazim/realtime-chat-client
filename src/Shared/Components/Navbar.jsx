@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { logout } from "../../Stores/Actions/auth";
 import { clearChatUser, setMessages } from "../../Stores/Actions/chat";
+import { revokeToken } from "../../Pages/Login/Api/Methods";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -10,11 +11,14 @@ const Navbar = () => {
 
   const currentUser = useSelector((state) => state.auth.user);
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     dispatch(clearChatUser());
     dispatch(logout());
     dispatch(setMessages([]));
+    const token = JSON.parse(localStorage.getItem("token"));
+    localStorage.removeItem("token");
     navigate("/");
+    revokeToken(token);
   };
 
   return (

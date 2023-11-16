@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import { loginSuccess } from "../../../Stores/Actions/auth";
 
-import { createNewUser } from "../Api/Methods";
+import { createNewUser, generateToken } from "../Api/Methods";
 import { LoginFormValidationSchema } from "../Validation/LoginValidation";
 
 const LoginForm = () => {
@@ -32,6 +32,17 @@ const LoginForm = () => {
     const newUser = response.data;
 
     if (newUser) {
+      const tokenResponse = await generateToken({
+        grant_type: "password",
+        ...user,
+        client_id: "B_hwvv-JxtjD3QEph4sN9BRwuKYvv34Oq45naHgFEF4",
+        client_secret: "_tAbh_wzuvXFkhUkC4atR8RrXNPwHQTwGZykTsgrvEg",
+      });
+
+      const token = tokenResponse.data;
+
+      localStorage.setItem("token", JSON.stringify(token));
+
       dispatch(loginSuccess(newUser));
 
       alert("Logged in Successfully");

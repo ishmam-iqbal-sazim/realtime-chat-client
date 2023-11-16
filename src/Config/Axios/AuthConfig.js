@@ -2,7 +2,7 @@ import axios from "axios";
 
 const axiosClient = axios.create();
 
-axiosClient.defaults.baseURL = "http://localhost:3000/api/v1";
+axiosClient.defaults.baseURL = "http://localhost:3000/oauth";
 
 axiosClient.defaults.headers = {
   "Content-Type": "application/json",
@@ -12,11 +12,12 @@ axiosClient.defaults.headers = {
 axiosClient.defaults.timeout = 5000;
 
 axiosClient.interceptors.request.use((config) => {
-  const tokenObject = JSON.parse(localStorage.getItem("token")) || {};
-  const token = tokenObject.access_token;
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
+  const username = "B_hwvv-JxtjD3QEph4sN9BRwuKYvv34Oq45naHgFEF4";
+  const password = "_tAbh_wzuvXFkhUkC4atR8RrXNPwHQTwGZykTsgrvEg";
+
+  const basicAuth = btoa(`${username}:${password}`);
+  config.headers.Authorization = `Basic ${basicAuth}`;
+
   return config;
 });
 
@@ -46,10 +47,6 @@ axiosClient.interceptors.response.use(
   }
 );
 
-export function getRequest(URL) {
-  return axiosClient.get(`/${URL}`).then((response) => response);
-}
-
-export function postRequest(URL, payload) {
+export function authPostRequest(URL, payload) {
   return axiosClient.post(`/${URL}`, payload).then((response) => response);
 }
