@@ -5,10 +5,12 @@ import { useNavigate } from "react-router-dom";
 
 import { loginSuccess } from "../../../Stores/Actions/auth";
 
-import { loginUser, generateToken } from "../Api/Methods";
-import { LoginFormValidationSchema } from "../Validation/LoginValidation";
+import { generateToken } from "../../Login/Api/Methods";
+import { createNewUser } from "../Api/Methods";
 
-const LoginForm = () => {
+import { LoginFormValidationSchema } from "../../Login/Validation/LoginValidation";
+
+const RegistrationForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -27,7 +29,7 @@ const LoginForm = () => {
   });
 
   const onSubmit = async (user) => {
-    const response = await loginUser(user);
+    const response = await createNewUser(user);
 
     if (response) {
       const newUser = response.data;
@@ -44,7 +46,7 @@ const LoginForm = () => {
 
       dispatch(loginSuccess(newUser));
 
-      alert("Logged in Successfully");
+      alert("Signed Up Successfully");
 
       navigate(`/${newUser.id}`);
     }
@@ -57,7 +59,7 @@ const LoginForm = () => {
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col gap-4 items-center justify-center w-[500px] px-10 py-12 border border-slate-200"
     >
-      <h1 className="font-medium text-lg mb-5">LOGIN</h1>
+      <h1 className="font-medium text-lg mb-5">REGISTER</h1>
 
       <div className="form-control w-full max-w-xs">
         <label className="label">
@@ -105,4 +107,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default RegistrationForm;

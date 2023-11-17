@@ -1,8 +1,8 @@
 import { authPostRequest } from "../../../Config/Axios/AuthConfig";
 import { postRequest } from "../../../Config/Axios/AxiosConfig";
 
-export const createNewUser = async (user) => {
-  return await postRequest("users", user);
+export const loginUser = async (user) => {
+  return await postRequest("login", user);
 };
 
 export const generateToken = async (token) => {

@@ -27,18 +27,25 @@ axiosClient.interceptors.response.use(
   (error) => {
     if (error.message === "Network Error") {
       alert("Network Error. Please check your internet connection.");
+    } else if (error.response.data.error === "User does not exist") {
+      alert("Username does not exist, please register first.");
+    } else if (error.response.data.error === "Username already exists") {
+      alert("User with this username already exists.");
     } else if (error.response) {
       if (error.response.status === 400) {
         alert("400 Bad request error");
       }
       if (error.response.status === 401) {
-        alert("Invalid credentials");
+        alert("401 Unauthorized");
       }
       if (error.response.status === 403) {
         alert("403 Forbidden - You are not authorized.");
       }
       if (error.response.status === 404) {
         alert("404 Not Found");
+      }
+      if (error.response.status === 500) {
+        alert("Something went wrong!");
       }
     } else {
       alert("Something went wrong!");
