@@ -46,6 +46,9 @@ axiosClient.interceptors.response.use(
       if (error.response.status === 404) {
         alert("404 Not Found");
       }
+      if (error.response.status === 422) {
+        alert("Something went wrong!");
+      }
       if (error.response.status === 500) {
         alert("Something went wrong!");
       }
