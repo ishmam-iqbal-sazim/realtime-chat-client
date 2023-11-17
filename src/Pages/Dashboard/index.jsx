@@ -58,7 +58,7 @@ const Dashboard = () => {
       <MainContainer className="h-screen min-h-[700px]">
         <Sidebar position="left" scrollable={false}>
           <div className="flex justify-center items-center bg-slate-200 h-20">
-            <p className="uppercase">{currentUser.username}</p>
+            <p>{currentUser.username}</p>
           </div>
 
           <Conversations users={users} currentUser={currentUser} />

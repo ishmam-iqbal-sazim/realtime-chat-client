@@ -21,7 +21,7 @@ const Conversations = ({ currentUser, users }) => {
   };
 
   const getMessageHistory = async (user) => {
-    const response = await fetchUserMessageHistory(currentUser.id, user.id);
+    const response = await fetchUserMessageHistory(user.id);
 
     const apiMessages = response.data;
 
