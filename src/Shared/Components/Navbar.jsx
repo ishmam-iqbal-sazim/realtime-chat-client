@@ -15,10 +15,10 @@ const Navbar = () => {
     dispatch(clearChatUser());
     dispatch(logout());
     dispatch(setMessages([]));
-    const token = JSON.parse(localStorage.getItem("token"));
-    localStorage.removeItem("token");
+    const token = localStorage.getItem("token");
     navigate("/");
-    revokeToken(token);
+    localStorage.removeItem("token");
+    revokeToken({ token });
   };
 
   return (

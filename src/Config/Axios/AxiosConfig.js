@@ -12,8 +12,7 @@ axiosClient.defaults.headers = {
 axiosClient.defaults.timeout = 5000;
 
 axiosClient.interceptors.request.use((config) => {
-  const tokenObject = JSON.parse(localStorage.getItem("token")) || {};
-  const token = tokenObject.access_token;
+  const token = localStorage.getItem("token");
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
