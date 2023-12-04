@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import { loginSuccess } from "../../../Stores/Actions/auth";
 
-import { loginUser } from "../Api/Methods";
+import { loginUser } from "../Api/LoginMethods";
 import { LoginFormValidationSchema } from "../Validation/LoginValidation";
 
 const LoginForm = () => {
@@ -34,7 +34,6 @@ const LoginForm = () => {
         id: response.data.id,
         username: response.data.username,
       };
-
       const token = response.data.token;
 
       localStorage.setItem("token", token);

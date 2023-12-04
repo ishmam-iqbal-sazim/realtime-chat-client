@@ -2,15 +2,12 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import ActionCable from "actioncable";
-
 import { MainContainer, Sidebar } from "@chatscope/chat-ui-kit-react";
 
 import Navbar from "../../Shared/Components/Navbar";
-
 import Chat from "./Chat/Chat";
 import Conversations from "./Conversations/Conversations";
-
-import { fetchAllUsers } from "./Api/Methods";
+import { fetchAllUsers } from "./Api/DashboardMethods";
 
 const Dashboard = () => {
   const [users, setUsers] = useState([]);

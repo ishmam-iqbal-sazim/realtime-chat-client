@@ -12,7 +12,7 @@ import {
 
 import { setMessages } from "../../../Stores/Actions/chat";
 
-import { sendMessage } from "../Api/Methods";
+import { sendMessage } from "../Api/DashboardMethods";
 
 import { convertApiMessageToChatMessage } from "../DashboardHelpers";
 

@@ -5,9 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 import { loginSuccess } from "../../../Stores/Actions/auth";
 
-import { createNewUser } from "../Api/Methods";
-
 import { LoginFormValidationSchema } from "../../Login/Validation/LoginValidation";
+import { createNewUser } from "../Api/RegistrationMethods";
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
@@ -35,7 +34,6 @@ const RegistrationForm = () => {
         id: response.data.id,
         username: response.data.username,
       };
-
       const token = response.data.token;
 
       localStorage.setItem("token", token);
