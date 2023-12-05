@@ -5,8 +5,8 @@ import ActionCable from "actioncable";
 import { MainContainer, Sidebar } from "@chatscope/chat-ui-kit-react";
 
 import Navbar from "../../Shared/Components/Navbar";
-import Chat from "./Chat/Chat";
-import Conversations from "./Conversations/Conversations";
+import Chat from "./Components/Chat/Chat";
+import Conversations from "./Components/Conversations/Conversations";
 import { fetchAllUsers } from "./Api/DashboardMethods";
 
 const Dashboard = () => {

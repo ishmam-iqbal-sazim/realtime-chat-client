@@ -2,10 +2,9 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Conversation, ConversationList } from "@chatscope/chat-ui-kit-react";
 
-import { changeChatUser, setMessages } from "../../../Stores/Actions/chat";
-
-import { fetchUserMessageHistory } from "../Api/DashboardMethods";
-import { convertApiMessagesToChatMessages } from "../DashboardHelpers";
+import { changeChatUser, setMessages } from "../../../../Stores/Actions/chat";
+import { fetchUserMessageHistory } from "../../Api/DashboardMethods";
+import { convertApiMessagesToChatMessages } from "../../DashboardHelpers";
 
 const Conversations = ({ currentUser, users }) => {
   const dispatch = useDispatch();

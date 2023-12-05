@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import {
   ChatContainer,
   MessageList,
@@ -10,11 +9,9 @@ import {
   MessageInput,
 } from "@chatscope/chat-ui-kit-react";
 
-import { setMessages } from "../../../Stores/Actions/chat";
-
-import { sendMessage } from "../Api/DashboardMethods";
-
-import { convertApiMessageToChatMessage } from "../DashboardHelpers";
+import { setMessages } from "../../../../Stores/Actions/chat";
+import { sendMessage } from "../../Api/DashboardMethods";
+import { convertApiMessageToChatMessage } from "../../DashboardHelpers";
 
 const Chat = ({ chattingWith, currentUser, cable }) => {
   const messages = useSelector((state) => state.chat.messages);

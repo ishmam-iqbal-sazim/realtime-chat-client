@@ -3,12 +3,12 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { loginSuccess } from "../../../Stores/Actions/auth";
+import { loginSuccess } from "../../../../Stores/Actions/auth";
 
-import { LoginFormValidationSchema } from "../../Login/Validation/LoginValidation";
-import { createNewUser } from "../Api/RegistrationMethods";
+import { loginUser } from "../../Api/LoginMethods";
+import { LoginFormValidationSchema } from "../../Validation/LoginValidation";
 
-const RegistrationForm = () => {
+const LoginForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -27,7 +27,7 @@ const RegistrationForm = () => {
   });
 
   const onSubmit = async (user) => {
-    const response = await createNewUser(user);
+    const response = await loginUser(user);
 
     if (response) {
       const newUser = {
@@ -40,7 +40,7 @@ const RegistrationForm = () => {
 
       dispatch(loginSuccess(newUser));
 
-      alert("Signed Up Successfully");
+      alert("Logged in Successfully");
 
       navigate(`/${newUser.id}`);
     }
@@ -53,7 +53,7 @@ const RegistrationForm = () => {
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col gap-4 items-center justify-center w-[500px] px-10 py-12 border border-slate-200"
     >
-      <h1 className="font-medium text-lg mb-5">REGISTER</h1>
+      <h1 className="font-medium text-lg mb-5">LOGIN</h1>
 
       <div className="form-control w-full max-w-xs">
         <label className="label">
@@ -101,4 +101,4 @@ const RegistrationForm = () => {
   );
 };
 
-export default RegistrationForm;
+export default LoginForm;
