@@ -1,0 +1,263 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RegistrationForm renders correctly 1`] = `
+<div>
+  <form
+    class="flex flex-col gap-4 items-center justify-center w-[500px] px-10 py-12 border border-slate-200"
+  >
+    <h1
+      class="font-medium text-lg mb-5"
+    >
+      REGISTER
+    </h1>
+    <div
+      class="form-control w-full max-w-xs"
+    >
+      <label
+        class="label"
+      >
+        <span
+          class="label-text"
+        >
+          Username
+        </span>
+      </label>
+      <input
+        class="input input-bordered w-full max-w-xs"
+        name="username"
+        placeholder="Your username"
+        type="text"
+      />
+    </div>
+    <div
+      class="form-control w-full max-w-xs"
+    >
+      <label
+        class="label"
+      >
+        <span
+          class="label-text"
+        >
+          Password
+        </span>
+      </label>
+      <input
+        class="input input-bordered w-full max-w-xs"
+        name="password"
+        placeholder="Your password"
+        type="password"
+      />
+    </div>
+    <button
+      class="btn btn-md btn-secondary font-semibold mt-5"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`RegistrationForm renders maxLength validation error if form submitted with long inputs 1`] = `
+<div>
+  <form
+    class="flex flex-col gap-4 items-center justify-center w-[500px] px-10 py-12 border border-slate-200"
+  >
+    <h1
+      class="font-medium text-lg mb-5"
+    >
+      REGISTER
+    </h1>
+    <div
+      class="form-control w-full max-w-xs"
+    >
+      <label
+        class="label"
+      >
+        <span
+          class="label-text"
+        >
+          Username
+        </span>
+      </label>
+      <input
+        class="input input-bordered w-full max-w-xs"
+        name="username"
+        placeholder="Your username"
+        type="text"
+      />
+      <p
+        class="text-red-500 text-xs my-1"
+      >
+        Username must not exceed 250 characters
+      </p>
+    </div>
+    <div
+      class="form-control w-full max-w-xs"
+    >
+      <label
+        class="label"
+      >
+        <span
+          class="label-text"
+        >
+          Password
+        </span>
+      </label>
+      <input
+        class="input input-bordered w-full max-w-xs"
+        name="password"
+        placeholder="Your password"
+        type="password"
+      />
+      <p
+        class="text-red-500 text-xs my-1"
+      >
+        Password must not exceed 250 characters.
+      </p>
+    </div>
+    <button
+      class="btn btn-md btn-secondary font-semibold mt-5"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`RegistrationForm renders minLength validation error if form submitted with short inputs 1`] = `
+<div>
+  <form
+    class="flex flex-col gap-4 items-center justify-center w-[500px] px-10 py-12 border border-slate-200"
+  >
+    <h1
+      class="font-medium text-lg mb-5"
+    >
+      REGISTER
+    </h1>
+    <div
+      class="form-control w-full max-w-xs"
+    >
+      <label
+        class="label"
+      >
+        <span
+          class="label-text"
+        >
+          Username
+        </span>
+      </label>
+      <input
+        class="input input-bordered w-full max-w-xs"
+        name="username"
+        placeholder="Your username"
+        type="text"
+      />
+      <p
+        class="text-red-500 text-xs my-1"
+      >
+        Username must be at least 3 characters
+      </p>
+    </div>
+    <div
+      class="form-control w-full max-w-xs"
+    >
+      <label
+        class="label"
+      >
+        <span
+          class="label-text"
+        >
+          Password
+        </span>
+      </label>
+      <input
+        class="input input-bordered w-full max-w-xs"
+        name="password"
+        placeholder="Your password"
+        type="password"
+      />
+      <p
+        class="text-red-500 text-xs my-1"
+      >
+        Password must be at least 8 characters.
+      </p>
+    </div>
+    <button
+      class="btn btn-md btn-secondary font-semibold mt-5"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`RegistrationForm renders required validation error if form submitted with empty inputs 1`] = `
+<div>
+  <form
+    class="flex flex-col gap-4 items-center justify-center w-[500px] px-10 py-12 border border-slate-200"
+  >
+    <h1
+      class="font-medium text-lg mb-5"
+    >
+      REGISTER
+    </h1>
+    <div
+      class="form-control w-full max-w-xs"
+    >
+      <label
+        class="label"
+      >
+        <span
+          class="label-text"
+        >
+          Username
+        </span>
+      </label>
+      <input
+        class="input input-bordered w-full max-w-xs"
+        name="username"
+        placeholder="Your username"
+        type="text"
+      />
+      <p
+        class="text-red-500 text-xs my-1"
+      >
+        Username is a required field.
+      </p>
+    </div>
+    <div
+      class="form-control w-full max-w-xs"
+    >
+      <label
+        class="label"
+      >
+        <span
+          class="label-text"
+        >
+          Password
+        </span>
+      </label>
+      <input
+        class="input input-bordered w-full max-w-xs"
+        name="password"
+        placeholder="Your password"
+        type="password"
+      />
+      <p
+        class="text-red-500 text-xs my-1"
+      >
+        Password is a required field.
+      </p>
+    </div>
+    <button
+      class="btn btn-md btn-secondary font-semibold mt-5"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
