@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login renders correctly 1`] = `
+<div>
+  <main
+    class="h-screen flex-col w-screen flex justify-center items-center"
+  >
+    <form
+      class="flex flex-col gap-4 items-center justify-center w-[500px] px-10 py-12 border border-slate-200"
+    >
+      <h1
+        class="font-medium text-lg mb-5"
+      >
+        LOGIN
+      </h1>
+      <div
+        class="form-control w-full max-w-xs"
+      >
+        <label
+          class="label"
+        >
+          <span
+            class="label-text"
+          >
+            Username
+          </span>
+        </label>
+        <input
+          class="input input-bordered w-full max-w-xs"
+          name="username"
+          placeholder="Your username"
+          type="text"
+        />
+      </div>
+      <div
+        class="form-control w-full max-w-xs"
+      >
+        <label
+          class="label"
+        >
+          <span
+            class="label-text"
+          >
+            Password
+          </span>
+        </label>
+        <input
+          class="input input-bordered w-full max-w-xs"
+          name="password"
+          placeholder="Your password"
+          type="password"
+        />
+      </div>
+      <button
+        class="btn btn-md btn-secondary font-semibold mt-5"
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+    <div>
+      Don't have an account?
+       
+      <a
+        class="btn-link"
+        href="/register"
+      >
+        Register
+      </a>
+    </div>
+  </main>
+</div>
+`;
