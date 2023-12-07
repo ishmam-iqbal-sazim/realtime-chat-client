@@ -4,8 +4,18 @@ import userEvent from "@testing-library/user-event";
 import { renderWithProviders } from "../../../../../jest.setup";
 
 import * as ApiMethods from "../../../../Pages/Login/Api/LoginMethods";
-
 import Navbar from "../Navbar";
+
+jest.mock("react-redux", () => ({
+  ...jest.requireActual("react-redux"),
+  useSelector: jest.fn().mockReturnValue(jest.fn()),
+  useDispatch: jest.fn().mockReturnValue(jest.fn()),
+}));
+
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: jest.fn().mockReturnValue(jest.fn()),
+}));
 
 describe("Navbar", () => {
   test("renders correctly", () => {
