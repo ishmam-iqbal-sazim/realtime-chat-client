@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar renders correctly 1`] = `
+<div>
+  <nav
+    class="flex justify-center gap-5 p-2 absolute z-50 right-2"
+  >
+    <a
+      class="btn btn-sm btn-secondary btn-outline"
+      href="/1"
+    >
+      Dashboard
+    </a>
+    <button
+      class="btn btn-sm btn-accent"
+    >
+      Logout
+    </button>
+  </nav>
+</div>
+`;

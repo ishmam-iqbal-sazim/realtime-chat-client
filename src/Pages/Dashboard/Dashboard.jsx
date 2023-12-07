@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import ActionCable from "actioncable";
 import { MainContainer, Sidebar } from "@chatscope/chat-ui-kit-react";
 
-import Navbar from "../../Shared/Components/Navbar";
+import Navbar from "../../Shared/Components/Navbar/Navbar";
 import Chat from "./Components/Chat/Chat";
 import Conversations from "./Components/Conversations/Conversations";
 import { fetchAllUsers } from "./Api/DashboardMethods";
