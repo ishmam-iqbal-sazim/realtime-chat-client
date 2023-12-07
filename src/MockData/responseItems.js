@@ -13,3 +13,7 @@ export const mockRegistrationResponse = {
     token: "mockToken",
   },
 };
+
+export const mockMessageResponse = {
+  data: { id: 1, content: "Hello", sender_id: 1, receiver_id: 2 },
+};
