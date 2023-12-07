@@ -20,3 +20,14 @@ export function renderWithProviders(
   }
   return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) };
 }
+
+jest.mock("react-redux", () => ({
+  ...jest.requireActual("react-redux"),
+  useSelector: jest.fn().mockReturnValue(jest.fn()),
+  useDispatch: jest.fn().mockReturnValue(jest.fn()),
+}));
+
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: jest.fn().mockReturnValue(jest.fn()),
+}));

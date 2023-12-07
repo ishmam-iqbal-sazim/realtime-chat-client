@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
-import { logout } from "../../Stores/Actions/auth";
-import { clearChatUser, setMessages } from "../../Stores/Actions/chat";
-import { revokeToken } from "../../Pages/Login/Api/LoginMethods";
+import { logout } from "../../../Stores/Actions/auth";
+import { clearChatUser, setMessages } from "../../../Stores/Actions/chat";
+import { revokeToken } from "../../../Pages/Login/Api/LoginMethods";
 
 const Navbar = () => {
   const dispatch = useDispatch();
