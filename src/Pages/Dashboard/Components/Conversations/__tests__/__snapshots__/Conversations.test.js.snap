@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Conversations handles click on conversation item 1`] = `
+<div>
+  <div
+    class="cs-conversation-list"
+  >
+    <div
+      class="scrollbar-container ps"
+    >
+      <ul>
+        <li>
+          <div
+            class="cs-conversation bg-slate-200 my-2"
+          >
+            <div
+              class="cs-conversation__content"
+            >
+              <div
+                class="cs-conversation__name"
+              >
+                Test User1
+              </div>
+              <div
+                class="cs-conversation__info"
+              />
+            </div>
+          </div>
+        </li>
+        <li>
+          <div
+            class="cs-conversation  my-2"
+          >
+            <div
+              class="cs-conversation__content"
+            >
+              <div
+                class="cs-conversation__name"
+              >
+                Test User2
+              </div>
+              <div
+                class="cs-conversation__info"
+              />
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div
+        class="ps__rail-x"
+        style="left: 0px; top: 0px;"
+      >
+        <div
+          class="ps__thumb-x"
+          style="left: 0px; width: 0px;"
+          tabindex="0"
+        />
+      </div>
+      <div
+        class="ps__rail-y"
+        style="top: 0px; left: 0px;"
+      >
+        <div
+          class="ps__thumb-y"
+          style="top: 0px; height: 0px;"
+          tabindex="0"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Conversations renders conversation list with users 1`] = `
+<div>
+  <div
+    class="cs-conversation-list"
+  >
+    <div
+      class="scrollbar-container ps"
+    >
+      <ul>
+        <li>
+          <div
+            class="cs-conversation  my-2"
+          >
+            <div
+              class="cs-conversation__content"
+            >
+              <div
+                class="cs-conversation__name"
+              >
+                Test User1
+              </div>
+              <div
+                class="cs-conversation__info"
+              />
+            </div>
+          </div>
+        </li>
+        <li>
+          <div
+            class="cs-conversation  my-2"
+          >
+            <div
+              class="cs-conversation__content"
+            >
+              <div
+                class="cs-conversation__name"
+              >
+                Test User2
+              </div>
+              <div
+                class="cs-conversation__info"
+              />
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div
+        class="ps__rail-x"
+        style="left: 0px; top: 0px;"
+      >
+        <div
+          class="ps__thumb-x"
+          style="left: 0px; width: 0px;"
+          tabindex="0"
+        />
+      </div>
+      <div
+        class="ps__rail-y"
+        style="top: 0px; left: 0px;"
+      >
+        <div
+          class="ps__thumb-y"
+          style="top: 0px; height: 0px;"
+          tabindex="0"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Conversations renders no users found when users array is empty 1`] = `
+<div>
+  <div>
+    No users found
+  </div>
+</div>
+`;
