@@ -1,0 +1,332 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chat renders 'Say Hi' when there's no message history and calls sendMessage on 'Say Hi' click 1`] = `
+<div>
+  <div
+    class="cs-chat-container"
+  >
+    <div
+      class="cs-conversation-header mb-2"
+    >
+      <div
+        class="cs-conversation-header__content"
+      >
+        <div
+          class="cs-conversation-header__user-name"
+        >
+          User2
+        </div>
+        <div
+          class="cs-conversation-header__info"
+        />
+      </div>
+    </div>
+    <div
+      class="cs-message-list"
+    >
+      <div
+        class="scrollbar-container cs-message-list__scroll-wrapper ps"
+        data-cs-message-list=""
+      >
+        <div
+          class="items-center flex justify-center w-full my-2"
+        >
+          <div
+            class="btn btn-neutral btn-outline btn-wide"
+          >
+            Say Hi!
+          </div>
+        </div>
+        <div
+          class="cs-message-list__scroll-to"
+        />
+        <div
+          class="ps__rail-x"
+          style="left: 0px; top: 0px;"
+        >
+          <div
+            class="ps__thumb-x"
+            style="left: 0px; width: 0px;"
+            tabindex="0"
+          />
+        </div>
+        <div
+          class="ps__rail-y"
+          style="top: 0px; left: 0px;"
+        >
+          <div
+            class="ps__thumb-y"
+            style="top: 0px; height: 0px;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="cs-message-input"
+      data-testid="message-input-box"
+    >
+      <div
+        class="cs-message-input__content-editor-wrapper"
+      >
+        <div
+          class="scrollbar-container cs-message-input__content-editor-container ps"
+        >
+          <div
+            class="cs-message-input__content-editor"
+            contenteditable="true"
+            data-placeholder="Type message here"
+          />
+          <div
+            class="ps__rail-x"
+            style="left: 0px; top: 0px;"
+          >
+            <div
+              class="ps__thumb-x"
+              style="left: 0px; width: 0px;"
+              tabindex="0"
+            />
+          </div>
+          <div
+            class="ps__rail-y"
+            style="top: 0px; left: 0px;"
+          >
+            <div
+              class="ps__thumb-y"
+              style="top: 0px; height: 0px;"
+              tabindex="0"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="cs-message-input__tools"
+      >
+        <button
+          class="cs-button cs-button--send"
+          disabled=""
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-paper-plane fa-w-16 "
+            data-icon="paper-plane"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Chat renders correctly with populated messages 1`] = `
+<div>
+  <div
+    class="cs-chat-container"
+  >
+    <div
+      class="cs-conversation-header mb-2"
+    >
+      <div
+        class="cs-conversation-header__content"
+      >
+        <div
+          class="cs-conversation-header__user-name"
+        >
+          User2
+        </div>
+        <div
+          class="cs-conversation-header__info"
+        />
+      </div>
+    </div>
+    <div
+      class="cs-message-list"
+    >
+      <div
+        class="scrollbar-container cs-message-list__scroll-wrapper ps"
+        data-cs-message-list=""
+      >
+        <section
+          class="cs-message cs-message--outgoing cs-message--single"
+          data-cs-message=""
+        >
+          <div
+            class="cs-message__content-wrapper"
+          >
+            <div
+              class="cs-message__header"
+            >
+              <div
+                class="cs-message__sender-name"
+              />
+              <div
+                class="cs-message__sent-time"
+              />
+            </div>
+            <div
+              class="cs-message__content"
+            >
+              <div
+                class="cs-message__html-content"
+              >
+                Hello
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="cs-message cs-message--incoming cs-message--single"
+          data-cs-message=""
+        >
+          <div
+            class="cs-message__content-wrapper"
+          >
+            <div
+              class="cs-message__header"
+            >
+              <div
+                class="cs-message__sender-name"
+              />
+              <div
+                class="cs-message__sent-time"
+              />
+            </div>
+            <div
+              class="cs-message__content"
+            >
+              <div
+                class="cs-message__html-content"
+              >
+                Hey there
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="cs-message cs-message--outgoing cs-message--single"
+          data-cs-message=""
+        >
+          <div
+            class="cs-message__content-wrapper"
+          >
+            <div
+              class="cs-message__header"
+            >
+              <div
+                class="cs-message__sender-name"
+              />
+              <div
+                class="cs-message__sent-time"
+              />
+            </div>
+            <div
+              class="cs-message__content"
+            >
+              <div
+                class="cs-message__html-content"
+              >
+                How are you?
+              </div>
+            </div>
+          </div>
+        </section>
+        <div
+          class="cs-message-list__scroll-to"
+        />
+        <div
+          class="ps__rail-x"
+          style="left: 0px; top: 0px;"
+        >
+          <div
+            class="ps__thumb-x"
+            style="left: 0px; width: 0px;"
+            tabindex="0"
+          />
+        </div>
+        <div
+          class="ps__rail-y"
+          style="top: 0px; left: 0px;"
+        >
+          <div
+            class="ps__thumb-y"
+            style="top: 0px; height: 0px;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="cs-message-input"
+      data-testid="message-input-box"
+    >
+      <div
+        class="cs-message-input__content-editor-wrapper"
+      >
+        <div
+          class="scrollbar-container cs-message-input__content-editor-container ps"
+        >
+          <div
+            class="cs-message-input__content-editor"
+            contenteditable="true"
+            data-placeholder="Type message here"
+          />
+          <div
+            class="ps__rail-x"
+            style="left: 0px; top: 0px;"
+          >
+            <div
+              class="ps__thumb-x"
+              style="left: 0px; width: 0px;"
+              tabindex="0"
+            />
+          </div>
+          <div
+            class="ps__rail-y"
+            style="top: 0px; left: 0px;"
+          >
+            <div
+              class="ps__thumb-y"
+              style="top: 0px; height: 0px;"
+              tabindex="0"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="cs-message-input__tools"
+      >
+        <button
+          class="cs-button cs-button--send"
+          disabled=""
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-paper-plane fa-w-16 "
+            data-icon="paper-plane"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

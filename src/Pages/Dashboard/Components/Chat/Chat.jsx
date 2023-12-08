@@ -8,14 +8,17 @@ import {
   ConversationHeader,
   MessageInput,
 } from "@chatscope/chat-ui-kit-react";
+import ActionCable from "actioncable";
 
 import { setMessages } from "../../../../Stores/Actions/chat";
 import { sendMessage } from "../../Api/DashboardMethods";
 import { convertApiMessageToChatMessage } from "../../DashboardHelpers";
 
-const Chat = ({ chattingWith, currentUser, cable }) => {
+const Chat = ({ chattingWith, currentUser }) => {
   const messages = useSelector((state) => state.chat.messages);
   const dispatch = useDispatch();
+
+  const cable = ActionCable.createConsumer("ws://localhost:3000/cable");
 
   const [newMessage, setNewMessage] = useState({});
 
@@ -96,6 +99,7 @@ const Chat = ({ chattingWith, currentUser, cable }) => {
         attachButton={false}
         placeholder="Type message here"
         onSend={(message) => handleSend(message)}
+        data-testid="message-input-box"
       />
     </ChatContainer>
   );

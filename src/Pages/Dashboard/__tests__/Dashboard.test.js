@@ -137,7 +137,7 @@ describe("ActionCable Socket", () => {
     });
 
     act(() => {
-      mockSubscription.create.mock.calls[1][1].received(newUser);
+      mockSubscription.create.mock.calls[0][1].received(newUser);
     });
 
     expect(screen.getByText(/New user/i)).toBeInTheDocument();

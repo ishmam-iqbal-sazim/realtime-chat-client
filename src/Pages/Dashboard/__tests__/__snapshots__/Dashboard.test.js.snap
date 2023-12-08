@@ -99,6 +99,7 @@ exports[`Dashboard does not render 'Select someone to chat with' when there is a
         </div>
         <div
           class="cs-message-input"
+          data-testid="message-input-box"
         >
           <div
             class="cs-message-input__content-editor-wrapper"
