@@ -18,7 +18,9 @@ const Chat = ({ chattingWith, currentUser }) => {
   const messages = useSelector((state) => state.chat.messages);
   const dispatch = useDispatch();
 
-  const cable = ActionCable.createConsumer("ws://localhost:3000/cable");
+  const cable = ActionCable.createConsumer(
+    "ws://localhost:3000/api/v1/cable_socket"
+  );
 
   const [newMessage, setNewMessage] = useState({});
 
